@@ -1,0 +1,20 @@
+<table class="table table-bordered">
+Site {{bookReader.readerName}}
+<thead>
+		<tr>
+			<th>Title</th>
+			<th>category</th>
+			<th>Borrow date</th>
+			<th>Return date</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="book in books">
+			<td>{{book.title}}</td>
+			<td>{{book.category}}</td>
+			<td>{{book.bookBorrowDate | date : format : timezone}}</td>
+			<td>{{book.returnDateBook | date : format : timezone}}</td>
+			<td><button class="btn" ng-click="return(book)">Return</button></td>
+		</tr>
+	</tbody>
+</table>

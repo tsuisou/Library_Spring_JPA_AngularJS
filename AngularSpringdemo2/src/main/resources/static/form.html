@@ -1,0 +1,11 @@
+<form>
+	<label for="username">Username</label> <input type="text" id="username" name="username"
+		ng-model="name" />
+	</p>
+	<p>
+		<label for="password">Email</label> <input type="password" id="password" name="password"
+			ng-model="email" />
+	</p>
+	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+	<button type="submit" ng-click="wyslij()" class="btn">Log in</button>
+</form>

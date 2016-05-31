@@ -1,0 +1,66 @@
+<table class="table table-bordered">
+Site {{bookReader.readerName}}
+<thead>
+		<tr>
+			<th>Title</th>
+			<th>category</th>
+			<th>Borrow date</th>
+			<th>Return date</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>{{book.title}}</td>
+			<td>{{book.category}}</td>
+			<td>{{book.bookBorrowDate | date : format : timezone}}</td>
+			<td>{{book.returnDateBook | date : format : timezone}}</td>
+		</tr>
+	</tbody>
+</table>
+
+<form name="frm">
+	<div>
+		<input type="email" name="email" ng-model="user.email" required>
+		<span ng-show="frm.email.$dirty && frm.email.$error.required">Required</span>
+		<span ng-show="frm.email.$dirty && frm.email.$error.email">Not an email</span>
+	</div>
+	<div>
+		<input 
+			type="password" 
+			name="password" 
+			ng-model="user.password" 
+			required
+			ng-minlength="5"
+			ng-maxlength="10"
+			/>
+		<span ng-show="frm.password.$dirty && frm.password.$error.required">Required</span>
+		<span ng-show="frm.password.$dirty && frm.password.$error.minlength">too short</span>
+		<span ng-show="frm.password.$dirty && frm.password.$error.maxlength">too long</span>
+	</div>
+	<button ng-disabled="frm.$invalid">Log on</button>
+</form>
+
+2$ fee for each day of delay
+<form name="myForm">
+<!-- <div> -->
+<!-- 	<label for="todayDate">Today Date</label> <input type="date" placeholder="yyyy-MM-dd" id="todayDate" name="date" -->
+<!-- 		ng-model="todayDate"required/> -->
+<!-- 		<span ng-show="myForm.date.$dirty && myForm.date.$error.date"> -->
+<!-- 		Incorrect Format, should be YYYY-MM-DD</span> -->
+<!-- 		<span ng-show="myForm.date.$dirty && myForm.date.$error.required">Required!</span> -->
+<!-- </div> -->
+<div>
+	<label for="todayDate">Today Date</label> <input type="date" placeholder="yyyy-MM-dd" id="todayDate" name="date"
+		ng-model="todayDate"required/>
+		<span ng-show="myForm.date.$dirty && myForm.date.$error.date">
+		Incorrect Format, should be YYYY-MM-DD</span>
+		<span ng-show="myForm.date.$dirty && myForm.date.$error.required">Required!</span>
+</div>
+	<br/>
+		Fee {{fee}}
+		<br/>
+<!-- 	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" /> -->
+	<button type="submit" ng-disabled="myForm.$invalid" ng-click="calc()" class="btn">Calculate a fee</button>
+	<button type="submit" ng-disabled="myForm.$invalid" ng-click="confirm()" class="btn">Confirm</button>
+</form>
+	<button ng-click="back()" class="btn">Back</button>

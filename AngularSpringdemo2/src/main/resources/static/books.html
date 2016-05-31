@@ -1,0 +1,42 @@
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>category</th>
+			<th>Available</th>
+			<th>Borrow date</th>
+			<th>Return date</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="book in books">
+			<td>{{book.title}}</td>
+			<td>{{book.category}}</td>
+			<td><input type="checkbox" ng-checked="{{book.available}}" ng-disabled="true"></td>
+			<td>{{book.bookBorrowDate | date : format : timezone}}</td>
+			<td>{{book.returnDateBook | date : format : timezone}}</td>
+			<td><button class="btn" ng-click="transfer(book)">Edit</button></td>
+			<td><button class="btn btn-danger" ng-click="delete(book.id)">Delete</button></td>
+		</tr>
+	</tbody>
+</table>
+pai
+<br>
+<button type="button" class="btn btn-primary" ng-click="addNew()">Add new book</button>
+<form name="myForm">
+	<fieldset class="form-group">
+		<label for="title">title</label> <input type="text" class="form-control" id="title"
+			placeholder="title" ng-model="data.title" ng-disabled="isDisabled" required>
+		<div class="has-error" ng-show="myForm.$dirty">
+			<span ng-show="myForm.title.$dirty && myForm.title.$error.required">This is a required field</span>
+			<!-- 			 <span ng-show="myForm.email.$invalid">This field is invalid </span>  -->
+		</div>
+		<label for="category">category</label> <input type="text" class="form-control" id="category"
+			placeholder="category" ng-model="data.category" ng-disabled="isDisabled">
+	</fieldset>
+	<!-- 	<button type="submit" class="btn btn-primary" ng-click="update(data)"">Edit</button> -->
+	<!-- 	<button type="submit" class="btn btn-primary" ng-click="add(data)" ng-show="{{!isEdit}}">Add</button> -->
+	<input type="button" class="btn btn-primary" ng-click="save(data)" ng-disabled="isDisabled"
+		value="Save">
+</form>
+

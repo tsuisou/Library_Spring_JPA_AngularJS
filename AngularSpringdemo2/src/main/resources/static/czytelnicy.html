@@ -1,0 +1,31 @@
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>BookReader</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="bookReader in bookReaders">
+			<td>{{bookReader.readerName}}</td>
+			<td><button class="btn" ng-click="borrow(bookReader)">Borrow</button></td>
+			<td><button class="btn" ng-click="transfer(bookReader)">Edit</button></td>
+			<td><button class="btn btn-danger" ng-click="remove(bookReader)">Delete</button></td>
+		</tr>
+	</tbody>
+</table>
+
+<br>
+<form name="myForm">
+	<fieldset class="form-group">
+		<label for="title">name</label> <input type="title" class="form-control" id="title"
+			placeholder="title" ng-model="data.readerName" required="required">
+		<div class="has-error" ng-show="myForm.$dirty">
+			<span ng-show="myForm.email.$error.required">This is a required field</span>
+<!-- 			 <span ng-show="myForm.email.$invalid">This field is invalid </span>  -->
+		</div>
+<!-- 		<label for="category">category</label> <input type="category" class="form-control" id="category" -->
+<!-- 			placeholder="category" ng-model="data.category"> -->
+	</fieldset>
+<!-- 	<button type="submit" class="btn btn-primary" ng-click="update(data)" ng-show="{{isEdit}}">Edit</button> -->
+	<button type="submit" class="btn btn-primary" ng-click="add(data)">Add Reader</button>
+</form>

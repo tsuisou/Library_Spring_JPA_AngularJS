@@ -1,0 +1,17 @@
+angular.module('app',
+		[ 
+		  'ngRoute',
+		  'ngResource',
+		  'app.config',
+		  'app.controller.navigation',
+		  'app.controller.home',
+		  'app.controller.form',
+		  'app.controller.book',
+		  'app.controller.bookReader',
+		  'app.controller.assignBook',
+		  'app.controller.oneBookReader',
+		  'app.controller.returnBook',
+		  'app.service.book',
+		  'app.service.bookReader',
+		  'app.service.returnBook',
+		  ]);

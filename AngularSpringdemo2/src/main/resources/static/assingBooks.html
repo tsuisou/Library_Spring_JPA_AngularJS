@@ -1,0 +1,27 @@
+<table class="table table-bordered">
+Assign books
+Current Reader:
+{{Reader.readerName}}
+<!-- <input type="text" ng-model="searchInput.title"> -->
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>category</th>
+			<th>Choosed</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="book in books.data ">
+			<td>{{book.title}}</td>
+			<td>{{book.category}}</td>
+			<td><input type="checkbox" ng-checked="book.choosed" ng-disabled="true"></td>
+			<td><button class="btn" ng-disabled="book.choosed" ng-click="assign(book)">Assign</button></td>
+		</tr>
+	</tbody>
+</table>
+			<button class="btn" ng-click="confirm()">Confirm</button>
+			<button class="btn" ng-click="clear()">Clear</button>
+			<button class="btn" ng-click="back()">Back</button>
+
+
