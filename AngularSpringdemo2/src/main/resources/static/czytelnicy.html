@@ -1,23 +1,26 @@
-<table class="table table-bordered">
-	<thead>
-		<tr>
-			<th>BookReader</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr ng-repeat="bookReader in bookReaders">
-			<td>{{bookReader.readerName}}</td>
-			<td><button class="btn" ng-click="borrow(bookReader)">Borrow</button></td>
-			<td><button class="btn" ng-click="transfer(bookReader)">Edit</button></td>
-			<td><button class="btn btn-danger" ng-click="remove(bookReader)">Delete</button></td>
-		</tr>
-	</tbody>
-</table>
-
+<div class="col-md-10 col-md-offset-1">
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Book reader</th>
+				<th>Do you want start borrow book?</th>
+				<th>Edit book reader</th>
+				<th>Delete book reader</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="bookReader in bookReaders">
+				<td>{{bookReader.readerName}}</td>
+				<td><button class="btn" ng-click="borrow(bookReader)">Borrow</button></td>
+				<td><button class="btn" ng-click="transfer(bookReader)">Edit</button></td>
+				<td><button class="btn btn-danger" ng-click="remove(bookReader)">Delete</button></td>
+			</tr>
+		</tbody>
+	</table>
 <br>
 <form name="myForm">
 	<fieldset class="form-group">
-		<label for="title">name</label> <input type="title" class="form-control" id="title"
+		<label for="title">Choose book reader name</label> <input type="title" class="form-control" id="title"
 			placeholder="title" ng-model="data.readerName" required="required">
 		<div class="has-error" ng-show="myForm.$dirty">
 			<span ng-show="myForm.email.$error.required">This is a required field</span>
@@ -29,3 +32,4 @@
 <!-- 	<button type="submit" class="btn btn-primary" ng-click="update(data)" ng-show="{{isEdit}}">Edit</button> -->
 	<button type="submit" class="btn btn-primary" ng-click="add(data)">Add Reader</button>
 </form>
+</div>
