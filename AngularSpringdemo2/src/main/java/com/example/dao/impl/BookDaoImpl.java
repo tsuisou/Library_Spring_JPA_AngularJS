@@ -1,4 +1,4 @@
-package com.example.dao;
+package com.example.dao.impl;
 
 import java.io.Serializable;
 import java.util.List;
@@ -9,6 +9,7 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
 
+import com.example.dao.BookDao;
 import com.example.entities.Book;
 
 @Repository

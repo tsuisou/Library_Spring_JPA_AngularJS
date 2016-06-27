@@ -1,4 +1,4 @@
-package com.example.services;
+package com.example.services.impl;
 
 import java.util.List;
 
@@ -9,6 +9,7 @@ import com.example.dao.BookDao;
 import com.example.dao.BookReaderDao;
 import com.example.entities.Book;
 import com.example.entities.BookReader;
+import com.example.services.BookReaderService;
 
 @Service
 public class BookReaderServiceImpl implements BookReaderService{

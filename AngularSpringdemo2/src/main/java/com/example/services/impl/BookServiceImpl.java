@@ -1,4 +1,4 @@
-package com.example.services;
+package com.example.services.impl;
 
 import java.util.List;
 
@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.dao.BookDao;
 import com.example.entities.Book;
+import com.example.services.BookService;
 
 @Service
 public class BookServiceImpl implements BookService{

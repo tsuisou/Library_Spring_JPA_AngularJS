@@ -1,4 +1,4 @@
-package com.example.dao;
+package com.example.dao.impl;
 
 import java.util.List;
 
@@ -12,6 +12,7 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
 
+import com.example.dao.BookReaderDao;
 import com.example.entities.Book;
 import com.example.entities.BookReader;
 

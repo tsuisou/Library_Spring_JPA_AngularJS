@@ -21,11 +21,11 @@ public class HelloController {
 //		return "jestem Userem";
 //	}
 	
-	@RequestMapping("/user")
-	public Principal user(Principal user) {
-		System.out.println(user.getName());
-		return user;
-	}
+//	@RequestMapping("/user")
+//	public Principal user(Principal user) {
+//		System.out.println(user.getName());
+//		return user;
+//	}
 	
 	@RequestMapping("/resource")
 	public Map<String, Object> home() {
